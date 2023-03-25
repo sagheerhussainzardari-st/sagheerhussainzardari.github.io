@@ -47,10 +47,10 @@
                                 .then(data => {
                                         const currentRate = data["rates"]["PKR"];
                                         const newSalary = (currentSalary * currentRate) / previousRate;
-                                        const formattedSalary = newSalary.toFixed(2) + " PKR";
+                                        const formattedSalary = newSalary.toFixed(2);
                                         Swal.fire({
-                                                title: "New Salary",
-                                                text: "Your new salary is: " + formattedSalary,
+                                                title: "New Salary Rs."+formattedSalary,
+                                                text: "Today's Rate => "+parseFloat(currentRate).toFixed(2),
                                                 icon: "success",
                                                 confirmButtonText: "OK"
                                         });
